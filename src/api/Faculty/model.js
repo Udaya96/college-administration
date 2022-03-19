@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 const FacultySchema = new mongoose.Schema({
     Name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+        
     },
     RegistrationNo: {
         type: Number,
@@ -14,10 +14,12 @@ const FacultySchema = new mongoose.Schema({
         type: String
     },
     Department: {
-        type: String
+        type: String,
+        enum: ["CSE","EEE","Mech","CIVIL","IT","ECE"]
     },
     Qualification: {
-        type: String
+        type: String,
+        enum: ["Metch","Betch","Pg"]
     }
 
 }, {

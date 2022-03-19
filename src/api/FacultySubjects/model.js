@@ -3,12 +3,17 @@ import mongoose from 'mongoose'
 const FacultySubjectsSchema = new mongoose.Schema({
     Name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+        
     },
     Subject: {
         type: String,
-        required:true
+        required: true
+  
+    },
+    code:{
+        type: String,
+        
     }
 
 }, {

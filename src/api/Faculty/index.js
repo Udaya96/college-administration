@@ -6,7 +6,8 @@ import {
   show,
   update,
   destroy,
-  searchFaculty
+  searchFaculty,
+  
 } from './controller'
 
 const router = new Router()
