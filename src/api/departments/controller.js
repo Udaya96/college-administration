@@ -23,7 +23,7 @@ export const index = (req, res) =>
 
 export const searchDepartment = (req, res) => {
   console.log(req.query);
-  Departments.find({ name: { '$regex' : req.query.string, '$options' : 'i' }}).exec((err, results) => {
+  Departments.find( {name: req.query.name}, (err, results) => {
     if (err) {
       res.send(err);
     } else {
