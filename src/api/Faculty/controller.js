@@ -21,16 +21,19 @@ export const show = (req, res) =>
 export const index = (req, res) =>
   sendAllFaculty(res);
 
-export const searchFaculty = (req, res) => {
-  console.log(req.query);
-  Faculty.find({ name: { '$regex' : req.query.string, '$options' : 'i' }}).exec((err, results) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(results);
-    }
-  })
-}
+  export const searchFaculty = (req, res) => {
+    console.log(req.query);
+    Faculty.find( {Name: req.query.Name}, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  }
+
+
+
 
 export const update = (req, res) => {
   Faculty.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedObj) => {

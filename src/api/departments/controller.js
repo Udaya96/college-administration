@@ -21,16 +21,16 @@ export const show = (req, res) =>
 export const index = (req, res) =>
   sendAllDepartments(res);
 
-export const searchDepartment = (req, res) => {
-  console.log(req.query);
-  Departments.find({ name: { '$regex' : req.query.string, '$options' : 'i' }}).exec((err, results) => {
-    if (err) {
-      res.send(err);
-    } else {
-      res.send(results);
-    }
-  })
-}
+  export const searchDepartment = (req, res) => {
+    console.log(req.query);
+    Departments.find( {code: req.query.code}, (err, results) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(results);
+      }
+    })
+  }
 
 export const update = (req, res) => {
   Departments.findByIdAndUpdate(req.params.id, req.body, { new: true}, (err, updatedObj) => {
