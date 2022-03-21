@@ -23,7 +23,7 @@ export const index = (req, res) =>
 
 export const searchFacultySubjects = (req, res) => {
   console.log(req.query);
-  FacultySubjects.find( {subject: req.query.subject}, (err, results) => {
+  FacultySubjects.find( req.query, (err, results) => {
     if (err) {
       res.send(err);
     } else {
