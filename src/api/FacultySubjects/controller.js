@@ -53,9 +53,9 @@ FacultySubjects.findByIdAndRemove(req.params.id, (err, deletedObj) => {
   }); 
 
   const sendAllFacultySubjects = (res) => {
-    FacultySubjects.find((er, FacultySubjects) => {
+    FacultySubjects.find((er, facultysubject) => {
       if (!er) {
-        res.send(FacultySubjects);
+        res.send(facultysubject);
       } else {
         res.send(er);
       }
