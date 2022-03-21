@@ -13,6 +13,7 @@ const FacultySubjectsSchema = new mongoose.Schema({
     },
     code:{
         type: String,
+        required: true
         
     }
 
