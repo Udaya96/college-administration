@@ -53,11 +53,10 @@ export const destroy = (req, res) =>
   }); 
 
   const sendAllDepartments = (res) => {
-    Departments.find((er, departments) => {
-      if (!er) {
-        res.send(departments);
-      } else {
-        res.send(er);
-      }
+    Departments.find().populate('faculty hod').then(results=>{
+res.send(results)
+    }).catch(err=>{
+      res.send(err)
     })
+  
   }
