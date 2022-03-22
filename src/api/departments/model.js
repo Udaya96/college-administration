@@ -10,6 +10,17 @@ const departmentSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    faculty:[
+              {
+                  type:mongoose.SchemaTypes.ObjectId,
+                  ref:'Faculty'
+              }
+    ],
+    hod:{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Faculty'
+
     }
 }, {
     timestamps: true
