@@ -20,7 +20,11 @@ const FacultySchema = new mongoose.Schema({
     Qualification: {
         type: String,
         enum: ["Metch","Betch","Pg"]
-    }
+    },
+    employees:[{
+      type:mongoose.SchemaTypes.ObjectId,
+      ref:'Employees'
+    }]
 
 }, {
     timestamps: true

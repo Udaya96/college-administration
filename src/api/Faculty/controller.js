@@ -56,11 +56,10 @@ export const destroy = (req, res) =>
   }); 
 
   const sendAllFaculty = (res) => {
-    Faculty.find((er, faculty) => {
-      if (!er) {
-        res.send(faculty);
-      } else {
-        res.send(er);
-      }
+    Faculty.find().populate('employees').then(results=>{
+res.send(results)
+    }).catch(err=>{
+      res.send(err)
     })
+  
   }
